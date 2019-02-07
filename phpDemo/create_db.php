@@ -17,7 +17,7 @@ $sql = "CREATE DATABASE userdb";
 if($conn->query($sql) == TRUE) {
 	echo "'userdb' Database created successfully"; 
 } else {
-	echo "Error creating database: " . $create_conn->error; 
+	echo "Error creating database: " . $conn->error; 
 }
 ?> 
 <br /><br />  

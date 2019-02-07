@@ -1,3 +1,6 @@
+<!-- 
+Bradley Latreille - Display our database for people to view their entires and deletes.
+-->
 <html> 
 <head> 
 <title>View Page</title> 

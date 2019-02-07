@@ -1,6 +1,6 @@
 phpDemo - Create by Bradley Latreille 
 -------------------------------------
-An application that demonstrates my ability to use PHP and MySQLi. The app lets tyou Add, Delete, and View entires into the database. I have also included two buttons that will let you create the database and the database_table. This way you do not have to manually create a database and table to use the project out of the box. 
+An application that demonstrates my ability to use PHP and MySQLi. The app lets you Add, Delete, and View entires into the database. I have also included two buttons that will let you create the database and the database_table. This way you do not have to manually create a database and table to use the project out of the box. 
 
 IMPORTANT INFORMATION:
 I am using a localhost to run this applicaiton. 

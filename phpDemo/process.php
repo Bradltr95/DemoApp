@@ -1,3 +1,7 @@
+<!--
+Bradley Latreille - process all our information. We connect to db if the field is not empty, 
+and create the record if so.
+-->
 <html> 
 <head> 
 <title>Hello World</title> 

@@ -14,19 +14,19 @@ and create the record if so.
 	// get username value using post method 
 	$username = $_POST["username"];
 	
-	// require field
+	// variable that stores the required text fields to submit the form
 	$required = 'username';
 	
-	// make sure that the user provided information
+	// check to see if the require field is empty
 	if(empty($_POST['username'])) {
+		// ask the user to give us some information
 		echo "Please make sure you put information in the text field!"; 
 	}else{
-		// insert information into our users table
+		// insert query to inster unsername into users
 		$sql = "INSERT INTO users (username)
 		VALUES ('$username')";  
 		
-		// connect to our db, make sure that this comes after the SQL query because it will assume 
-		// the $username variable from the app/connect.php file.
+		// connect to out database so we can start inserting
 		include "app/connect.php"; 
 		
 		// check to see if the query works
@@ -35,6 +35,7 @@ and create the record if so.
 			echo "New record createad successfully:".
 			"<p style='color:red;'>" . $_POST['username'] . "</p>"; //--Development test
 		} else {
+			// report any errors
 			echo "Error: " . $sql . "<br>";  
 		} 
 	}

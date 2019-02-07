@@ -18,7 +18,7 @@ $sql = "SELECT * FROM users";
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);
 
-// create our array of users to display
+// create a blank array to hold our usernames
 $users = array(); 
 
 // fetch the results and move them into the row users array

@@ -15,7 +15,7 @@ check to make sure our inputed value is in the database, and delete it from the 
 include "app/connect.php"; 
 
 // create a query to get all our usernames for checking 
-$sql = "SELECT * FROM users";
+$sql = "SELECT username FROM users";
 	
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);

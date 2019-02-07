@@ -1,7 +1,10 @@
--- Create by Bradley Latreille, two DemoApps names 'DemoApp' and 'phpDemo' 
+-- Create by Bradley Latreille
+two DemoApps named 'DemoApp' and 'phpDemo' 
+
 'DemoApp' : insert data into a database and view it 
 Database: phpmyadmin 
 DemoAPPDatabasename: testdb 
+
 'phpDemo' : insert, view or delete info from a database. 
 Database: phpmyadmin 
 DemoAPPDatabasename: users 

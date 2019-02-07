@@ -1,7 +1,3 @@
-<!-- 
-Bradley Latreille - Connect to the database, select all the info from the users table in our database, 
-check to make sure our inputed value is in the database, and delete it from the users database.
--->
 <html> 
 <head> 
 <title>Delete Page</title> 
@@ -13,34 +9,44 @@ check to make sure our inputed value is in the database, and delete it from the 
 <?php
 // connect to our database
 include "app/connect.php"; 
-
-// create a query to get all our usernames for checking 
+//-------------------------------------------------------------------
+// Get all our information from the database to test against deleted.
+//-------------------------------------------------------------------
+// create SQL command to be used with sqli_query
 $sql = "SELECT username FROM users";
-	
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);
 
-// boolean that checks if our deleted username is in the database
+// create our array of users to display
+$users = array(); 
+
+// check to see if the user was deleted
 $deleted = false;
 
-// fetch the results and move them into the row users array
-while($row = $result->fetch_assoc()) {
-	// check to see if the username is in the database
-	if($row['username'] == $_POST['delete_name']) {
-		// use $deleted boolean to delete info from database below
-		$deleted = true; 
+// require field
+$required = 'delete_name';
+
+// make sure that the user provided information
+if(empty($_POST['delete_name'])) {
+	echo "Please make sure you put information in the text field!"; 
+} else {
+	// fetch the results and move them into the row users array
+	while($row = $result->fetch_assoc()){
+		if($row['username'] == $_POST['delete_name']) {
+			$deleted = true;
+		}
 	}
-}
-// Let the user know we have deleted the user or if we have failed
-if($deleted) {
-	// query 
-	$sql = "DELETE FROM users WHERE username='".$_POST['delete_name']."'"; 
-	// if successful let the user know that we have deleted the record. 
-	if($conn->query($sql) == TRUE) {
-		// Report back to the user letting them know that we have deleted the value
-		echo "Record deleted: " . $_POST['delete_name'] . ""; 
+
+	if($deleted) {
+		$sql = "DELETE FROM users WHERE username='".$_POST['delete_name']."'"; 
+				
+		if($conn->query($sql) == TRUE) {
+			echo "Record deleted: " . $_POST['delete_name'] . ""; 
+		} else {
+			echo "Error deleting record: " . $conn->error;
+		}
 	} else {
-		echo "Error deleting record: " . $conn->error;
+		echo "Unable to delete " . $_POST['delete_name'] . ""; 
 	}
 }
 ?>

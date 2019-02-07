@@ -1,5 +1,5 @@
 phpDemo is a website I created to demonstrate my ability to create information from a form 
-and submit it to the server using the post method and query commands. Delete information if the data exists, and report to the user letting them know if the file was deleted or not. As well as view the database that we are working with so you can quickly view entires and add/delete more. 
+and submit it to the server using the post method and query commands. Delete information if the data exists, and report to the user letting them know if the file was deleted or not. As well as view the database that we are working with so you can quickly view entires and add/delete more. I have also added the functionality to check if the user has entered anything in the create/delete forms and tell them they to enter data if they haven't.  
 
 *** PLEASE RUN THE RAW FILE TO VIEW FORMAT CORRECTLY ***
 -- Create by Bradley Latreille

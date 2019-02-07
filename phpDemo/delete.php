@@ -20,9 +20,6 @@ $sql = "SELECT * FROM users";
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);
 
-// create an empty array to store our usernames
-$users = array(); 
-
 // boolean that checks if our deleted username is in the database
 $deleted = false;
 

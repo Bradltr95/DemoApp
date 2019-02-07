@@ -13,18 +13,17 @@ check to make sure our inputed value is in the database, and delete it from the 
 <?php
 // connect to our database
 include "app/connect.php"; 
-//-------------------------------------------------------------------
-// Get all our information from the database to test against deleted.
-//-------------------------------------------------------------------
-// create SQL command to be used with sqli_query
+
+// create a query to get all our usernames for checking 
 $sql = "SELECT * FROM users";
+	
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);
 
-// create our array of users to display
+// create an empty array to store our usernames
 $users = array(); 
 
-// check to see if the user was deleted
+// boolean that checks if our deleted username is in the database
 $deleted = false;
 
 // fetch the results and move them into the row users array

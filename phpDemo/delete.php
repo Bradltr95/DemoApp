@@ -36,16 +36,22 @@ if(empty($_POST['delete_name'])) {
 			$deleted = true;
 		}
 	}
-
+	// if what we entered can be delete, now we can remove it from the database
 	if($deleted) {
+		// our query to delete username from users
 		$sql = "DELETE FROM users WHERE username='".$_POST['delete_name']."'"; 
-				
+		
+		// if the query works then we can report back that the record has been deleted
 		if($conn->query($sql) == TRUE) {
 			echo "Record deleted: " . $_POST['delete_name'] . ""; 
 		} else {
+			// let our users know if there was no deleted record
 			echo "Error deleting record: " . $conn->error;
 		}
 	} else {
+		// if the user enters a value that is not in the database
+		// we can let them know here that their value isn't in the 
+		// database if it doesn't bass the checks above. 
 		echo "Unable to delete " . $_POST['delete_name'] . ""; 
 	}
 }

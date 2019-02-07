@@ -6,8 +6,8 @@ Bradley Latreille - Display our database for people to view their entires and de
 <title>View Page</title> 
 </head> 
 <body> 
-<h1 style="text-algin:center">View Page</h1>
-<p style="text-align:center">View our database here</p>
+<h1 style="text-align:center;">View Page</h1>
+<p style="text-align:center;">View our database here</p>
 <br /><br />
 <?php 
 // connect to the database

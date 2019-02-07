@@ -1,3 +1,6 @@
+<!--
+Bradley Latreille - main page for the application, view the forms where we can submit and perform actions
+-->
 <html> 
 <head> 
 <title>Hello World</title> 

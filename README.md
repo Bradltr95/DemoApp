@@ -12,14 +12,13 @@ username: 'root';
 password: ''; 
 
 HOW TO DEPLOY APP: 
-1. Create a database named testdb, or users depending on which application you are loading.
+1. Create a database named userdb
 
-  
-2. 'phpDemo' Create a table named users with the following columns: 
+2. Create a table named users with the following columns: 
   - id(auto) 
   - username
   
-3. copy the folder to xampp/htdocs if using XAMPP
+3. Clone the phpDemo folder to your server directory
 
 4. Run the following url in your browser  
   - localhost/phpDemo/

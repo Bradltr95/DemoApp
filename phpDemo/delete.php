@@ -30,11 +30,15 @@ while($row = $result->fetch_assoc()){
 	}
 }
 // Let the user know we have deleted the user or if we have failed
-if(!$deleted) {
-	echo "Not deleted! Try checking that the username was spelt correctly?"; 
-} else {
-	// let the user know what we deleted
-	echo "Deleted:" . "<p style='color:red;'>" . $_POST['delete_name'] . "</p>";
+if($deleted) {
+	// query 
+	$sql = "DELETE FROM users WHERE username='".$_POST['delete_name']."'"; 
+	// if successful let the user know that we have deleted the record. 
+	if($conn->query($sql) == TRUE) {
+		echo "Record deleted: " . $_POST['delete_name'] . ""; 
+	} else {
+		echo "Error deleting record: " . $conn->error;
+	}
 }
 ?>
 <br /><br />

@@ -33,7 +33,7 @@ and create the record if so.
 		if($conn->query($sql) == TRUE) {
 			// let the user know it worked
 			echo "New record createad successfully:".
-			"<p style='color:red;'>" . $_POST['username'] . "</p>"; //--Development test
+			"<p style='color:green;'>" . $_POST['username'] . "</p>"; //--Development test
 		} else {
 			// report any errors
 			echo "Error: " . $sql . "<br>";  

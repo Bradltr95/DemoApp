@@ -43,7 +43,8 @@ if(empty($_POST['delete_name'])) {
 		
 		// if the query works then we can report back that the record has been deleted
 		if($conn->query($sql) == TRUE) {
-			echo "Record deleted: " . $_POST['delete_name'] . ""; 
+			echo "Record deleted: " .
+			"<p style='color:red;'>" . $_POST['delete_name'] . "</p>"; 
 		} else {
 			// let our users know if there was no deleted record
 			echo "Error deleting record: " . $conn->error;

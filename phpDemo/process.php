@@ -29,8 +29,9 @@ and create the record if so.
 		// the $username variable from the app/connect.php file.
 		include "app/connect.php"; 
 		
-		// check connection and report back accordingly
+		// check to see if the query works
 		if($conn->query($sql) == TRUE) {
+			// let the user know it worked
 			echo "New record createad successfully:".
 			"<p style='color:red;'>" . $_POST['username'] . "</p>"; //--Development test
 		} else {

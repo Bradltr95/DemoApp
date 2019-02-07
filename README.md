@@ -1,8 +1,9 @@
+phpDemo is a website I create to demonstrate my ability to create information from a form 
+and submit to the server using the post method and query commands. Delete information if the data exists, and report to the user letting them know if the file was deleted or not. As well as view the database that we are working with so you can quickly view entires and add/delete more. 
+
 *** PLEASE RUN THE RAW FILE TO VIEW FORMAT CORRECTLY ***
 -- Create by Bradley Latreille
-phpDemo 
 
-'phpDemo' : insert, view or delete info from a database. 
 Database: phpmyadmin 
 DemoAPPDatabasename: users 
 

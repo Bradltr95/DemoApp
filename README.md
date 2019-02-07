@@ -1,27 +1,22 @@
-phpDemo is a website I created to demonstrate my ability to create information from a form 
-and submit it to the server using the post method and query commands. Delete information if the data exists, and report to the user letting them know if the data was deleted or not as well as view the database that we are working with so you can quickly view entires and add/delete more. I have also added the functionality to check if the user has entered nothing in the create/delete forms so they cant add random entries and the ability to create the database/username before using the application so you don't have to do it manually. 
-Simply run the application on your server, press the create database button, and go back and press the create table button. You will be able to use the app properly after this.  
-
-*** PLEASE RUN THE RAW FILE TO VIEW FORMAT CORRECTLY ***
--- Create by Bradley Latreille
-
-Database: phpmyadmin 
-DemoAPPDatabasename: users 
+phpDemo - Create by Bradley Latreille 
+-------------------------------------
+An application that demonstrates my ability to use PHP and MySQLi. The app lets tyou Add, Delete, and View entires into the database. I have also included two buttons that will let you create the database and the database_table. This way you do not have to manually create a database and table to use the project out of the box. 
 
 IMPORTANT INFORMATION:
 I am using a localhost to run this applicaiton. 
 username: 'root'; 
 password: ''; 
+Database: phpmyadmin 
+DemoAPPDatabasename: users
 
 HOW TO DEPLOY APP: 
-1. Create a database named userdb
+1. Download the repo and move the phpDemo folder to your root directory. 
 
-2. Create a table named users with the following columns: 
-  - id(auto) 
-  - username
-  
-3. Clone the phpDemo folder to your server directory
+2. run the following into your url assuming you are using a localhost 
+localhost/phpDemo 
 
-4. Run the following url in your browser  
-  - localhost/phpDemo/
+3. Create the database FIRST 
 
+4. Create the table SECOND 
+
+5. Easily Add, Delete, and View your entries to the database. 

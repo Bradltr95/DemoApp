@@ -1,3 +1,6 @@
+<!-- The delete.php files is used to delete entries from the database if the data exists. 
+There is also a check to see if there was no data entered into the delete form. If there wasn't 
+any data entered we let them know they must enter something first. -->
 <html> 
 <head> 
 <title>Delete Page</title> 
@@ -9,39 +12,43 @@
 <?php
 // connect to our database
 include "app/connect.php"; 
-//-------------------------------------------------------------------
-// Get all our information from the database to test against deleted.
-//-------------------------------------------------------------------
-// create SQL command to be used with sqli_query
+	
+// create SQL command to query
 $sql = "SELECT username FROM users";
-// pass the results of the query to $result
+	
+// pass the results of the query to the database into $result
 $result=mysqli_query($conn,$sql);
 
-// create our array of users to display
+// create an array to store all our users for checking. 
 $users = array(); 
 
-// check to see if the user was deleted
-$deleted = false;
+// a boolean used to make sure that the data we enter is deletable(exists in the db). 
+$deletable = false;
 
-// require field
+// a variable that stores the required fields for the delete form. 
 $required = 'delete_name';
 
 // make sure that the user provided information
 if(empty($_POST['delete_name'])) {
-	echo "Please make sure you put information in the text field!"; 
+	// if the user didn't enter any data let them know they have to 
+	echo "Please make sure you put information in the text field!";
+// if there was data entered we continue with our program 
 } else {
-	// fetch the results and move them into the row users array
+	// store the results of the database into our $row array so we 
+	// can check to see if our data entered exists. 
 	while($row = $result->fetch_assoc()){
+		// if any of our usernames match the username entered 
 		if($row['username'] == $_POST['delete_name']) {
-			$deleted = true;
+			// make deletable true
+			$deletable = true;
 		}
 	}
-	// if what we entered can be delete, now we can remove it from the database
-	if($deleted) {
+	// If what we entered can be deleted, now we can remove it from the database
+	if($deletable) {
 		// our query to delete username from users
 		$sql = "DELETE FROM users WHERE username='".$_POST['delete_name']."'"; 
 		
-		// if the query works then we can report back that the record has been deleted
+		// if the query works then we can report back that the record has been 
 		if($conn->query($sql) == TRUE) {
 			echo "Record deleted: " .
 			"<p style='color:red;'>" . $_POST['delete_name'] . "</p>"; 
@@ -53,7 +60,9 @@ if(empty($_POST['delete_name'])) {
 		// if the user enters a value that is not in the database
 		// we can let them know here that their value isn't in the 
 		// database if it doesn't bass the checks above. 
-		echo "Unable to delete " . $_POST['delete_name'] . ""; 
+		echo "Unable to delete " . $_POST['delete_name'] . "";
+		echo "Either the data you entered is incorrect or we do not have anyone named " . 
+		     $_POST['deleted_name'] . " in our database."; 
 	}
 }
 ?>

@@ -59,10 +59,10 @@ if(empty($_POST['delete_name'])) {
 	} else {
 		// if the user enters a value that is not in the database
 		// we can let them know here that their value isn't in the 
-		// database if it doesn't bass the checks above. 
+		// database if it doesn't pass the checks above. 
 		echo "Unable to delete " . $_POST['delete_name'] . "";
 		echo "Either the data you entered is incorrect or we do not have anyone named " . 
-		     $_POST['deleted_name'] . " in our database."; 
+		     $_POST['delete_name'] . " in our database."; 
 	}
 }
 ?>

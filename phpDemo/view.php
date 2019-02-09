@@ -1,6 +1,4 @@
-<!-- 
-Bradley Latreille - Display our database for people to view their entires and deletes.
--->
+<!-- view.php - A file that lets us view the entries in our database --> 
 <html> 
 <head> 
 <title>View Page</title> 
@@ -15,6 +13,7 @@ include "app/connect.php";
 
 // create SQL command to be used with sqli_query
 $sql = "SELECT * FROM users";
+
 // pass the results of the query to $result
 $result=mysqli_query($conn,$sql);
 

@@ -19,19 +19,21 @@ will take us to the create_db.php page with the
 	Create the users table in the userdb. Click this button second to create our tables for the app
 	<button type="submit" value="Submit">Create the users table</button> 
 </form> 
-<!-- This form takes us to the process page where we can input the entry to the database --> 
+<!-- This form redirects us along with the information we passed in the text_field to our process.php page 
+The information gets submitted to our database. --> 
 <form action="process.php" method="post"> 
 	Enter a username to the database:
 	<input type="text" name="username"> 
 	<button type="submit" value="Submit">Submit</button>
 </form> 
-<!-- This form takes us to the delete page where we can delete a username from our database --> 
+<!-- This form redirects us along with the information we passed in the text_field to our delete.php page 
+The information gets checked against our database, and any errors get reported back to the user. --> 
 <form action="delete.php" method="post"> 
 	Delete a username from the database: 
 	<input type="text" name="delete_name"> 
 	<button type="submit" value="Delete">DELETE</button>
 </form>
-<!-- This form takes us to the view.php page where we can see the usernames in our database --> 
+<!-- This button lets us view the entire userdb database -->  
 <form action="view.php" method="post"> 
 	View the current database
 	<button type="submit" value="View">VIEW</button>

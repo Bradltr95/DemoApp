@@ -9,13 +9,13 @@
 <br />
 <?php 
 	// get username value using post method 
-	$username = $_POST["username"];
+	$username = $_POST['username'];
 	
 	// make a variable of required fields to submit our form to process.php
 	$required = 'username';
 	
 	// check to see if the require field is empty
-	if(empty($_POST['username'])) {
+	if(empty($username)) {
 		// ask the user to give us some information if they need to 
 		echo "Please make sure you put information in the text field!"; 
 	}else{

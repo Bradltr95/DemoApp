@@ -1,7 +1,4 @@
-<!--
-Bradley Latreille - process all our information. We connect to db if the field is not empty, 
-and create the record if so.
--->
+<!-- process.php - A file used to enter data to our database --> 
 <html> 
 <head> 
 <title>Hello World</title> 
@@ -14,28 +11,28 @@ and create the record if so.
 	// get username value using post method 
 	$username = $_POST["username"];
 	
-	// variable that stores the required text fields to submit the form
+	// make a variable of required fields to submit our form to process.php
 	$required = 'username';
 	
 	// check to see if the require field is empty
 	if(empty($_POST['username'])) {
-		// ask the user to give us some information
+		// ask the user to give us some information if they need to 
 		echo "Please make sure you put information in the text field!"; 
 	}else{
-		// insert query to inster unsername into users
+		// store our query into $sql 
 		$sql = "INSERT INTO users (username)
 		VALUES ('$username')";  
 		
 		// connect to out database so we can start inserting
 		include "app/connect.php"; 
 		
-		// check to see if the query works
+		// check to see if our query was successful
 		if($conn->query($sql) == TRUE) {
-			// let the user know it worked
-			echo "New record createad successfully:".
-			"<p style='color:green;'>" . $_POST['username'] . "</p>"; //--Development test
+			// let the user know the record was created to the database 
+			echo "New record createad successfully:" .
+			"<p style='color:green;'>" . $username . "</p>"; 
 		} else {
-			// report any errors
+			// report any errors back to the user 
 			echo "Error: " . $sql . "<br>";  
 		} 
 	}

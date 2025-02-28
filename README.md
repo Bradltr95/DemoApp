@@ -1,4 +1,4 @@
-phpDemo - Create by Bradley Latreille 
+phpDemo - Created by Bradley Latreille 
 -------------------------------------
 An application that demonstrates my ability to use PHP and MySQLi. The app lets you Add, Delete, and View entires into the database. I have also included two buttons that will let you create the database and the database_table. This way you do not have to manually create a database and table to use the project out of the box. 
 
@@ -12,7 +12,7 @@ DemoAPPDatabasename: users
 HOW TO DEPLOY APP: 
 1. Download the repo and move the phpDemo folder to your root directory. 
 
-2. run the following into your url assuming you are using a localhost 
+2. Type the following into your url assuming you are using a localhost 
 localhost/phpDemo 
 
 3. Create the database FIRST 
